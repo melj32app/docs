@@ -8,7 +8,7 @@ mParticle's Apptentive integration is provided via the Apptentive Kits for the m
 
 ## mParticle Apptentive Implementation Scenarios
 
-**The mParticle SDK** allows you to include the Apptentive kit which allows Apptentive interface features, including tools for gathering customer feedback as well as analyzing results at scale.
+**The mParticle SDK** allows you to include the Apptentive kit which provides Apptentive interface features, including tools for gathering customer feedback as well as analyzing results at scale.
 
 Engagement: 
 
@@ -30,10 +30,11 @@ Apptentive will process the following events forwarded via this integration. How
 
 * Custom Events
 * User Attributes
+* Screen Views
 
 ## Prerequisites
 
-In order to enable mParticle's integration with Apptentive, you will need your Apptentive App Key and Apptentive App Signature for each respective app and environment which you can get from Apptentive's [API and Development](https://be.apptentive.com/apps/current/settings/api) page. If you need assistance to get an account, you can contact your Apptentive representative or reach out [here](mailto:support@apptentive.com).
+In order to enable mParticle’s integration with Apptentive, you will need your Apptentive App Key and Apptentive App Signature for each respective app and environment which you can get from Apptentive's [API and Development](https://be.apptentive.com/apps/current/settings/api) page. If you need assistance to get an account, you can contact your Apptentive representative or reach out [here](mailto:support@apptentive.com).
 
 ## Apptentive Kit Integration
 
@@ -66,6 +67,7 @@ dependencies {
 ~~~  
 :::
 
+
 ## Apptentive mParticle Configuration
 ### Create an Apptentive Output Configuration in mParticle Dashboard
 
@@ -75,22 +77,21 @@ dependencies {
 4.  Select the **Apptentive** output configuration group to configure an output event configuration.
 5.  Enter a Configuration Name and your Apptentive configuration settings and click **Save**.
 
-### Configure Events and User Attributes to pass to Apptentive in mParticle Dashboard
+### Configure Events, Screens, and User Attributes to pass to Apptentive in mParticle Dashboard
 1.  Select **Connections**.
 2.  Select the Input for the connection definition.
 3.  Click **Connect Output**.
-4.  Select the **Apptentive** configuration.
+4.  Select the **Apptimize** configuration.
 5.  Enter your connection configuration settings.
 6. Toggle the Status to **Sending**.
 7. Click **Save**.
 
 ## Configure Interactions within Apptentive:
 1. Create a new Apptentive Dashboard or use an existing one.
-2. Be sure to trigger all Events within your app while connected to Apptentive. This will ensure that the kit is set up properly and all Events are available for use within Apptentive. To view which Events have been triggered and are available, go to **Interactions** then **Events** on your Apptentive Dashboard. 
+2. Be sure to trigger all Events and Screens within your app while connected to Apptentive. This will ensure that the kit is set up properly and all Events are available for use within Apptentive. To view which Events have been triggered and are available, go to **Interactions** then **Events** on your Apptentive Dashboard. 
 3. From the **Interactions** tab of Apptentive, set up the desired Interaction. Configure the wording, then set targeting using Events and/or Person Custom Data, then Launch. 
 
-
-Note: if launching in a production app, real customers will be eligible to see the Interaction. We recommend testing in a dev app prior to launching in production. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Note: if launching in a production app, real customers will be eligible to see the Interaction. We recommend testing in a dev app prior to launching in production. 
    
 For full details on the Apptentive mParticle integration, please refer to the Apptentive documentation:
 * [iOS](https://learn.apptentive.com/knowledge-base/mparticle-integration-ios/)
@@ -109,10 +110,16 @@ If you choose to use Apptentive’s Message Center, we recommend that you add a 
 
 ### Interface Customization
 
-By default, Apptentive inherits global app styles. To override those and update the look and feel of Apptentive Surveys and Message Center, use these guides:
+By default, Apptentive inherits global app styles. To override those and update the look and feel of Apptentive Surveys and Message Center, use these guides.
 
 * [iOS](https://learn.apptentive.com/knowledge-base/interface-customization-ios/)
 * [Android](https://learn.apptentive.com/knowledge-base/android-interface-customization/)
+
+### Type Detection for User Attributes
+By default, each user attribute will be passed as a string, but if detected that it can also be sent as either a boolean or number it will be sent twice with a suffix added to show its type (which can be either "flag" or "number")
+
+* [iOS](https://learn.apptentive.com/knowledge-base/mparticle-integration-ios/#4-configure-custom-data)
+* [Android](https://learn.apptentive.com/knowledge-base/mparticle-integration-android/#4-configure-custom-data)
 
 ## Configuration Settings
 
